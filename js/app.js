@@ -57,13 +57,6 @@ Player.prototype.update = function (dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
 
-    allEnemies.map(enemy => {
-        // Checking if the player have collide with a enemy
-        if (enemy.x < this.x + 75 && enemy.x + 75 > this.x && enemy.y < this.y + 85 && enemy.y + 85 > this.y) {
-            this.respawn(false)
-        }
-    })
-
     this.x = this.x;
     this.y = this.y;
 };

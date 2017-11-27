@@ -79,7 +79,16 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
+    }
+
+    function checkCollisions(){
+        allEnemies.map(enemy => {
+            // Checking if the player have collide with a enemy
+            if (enemy.x < player.x + 75 && enemy.x + 75 > player.x && enemy.y < player.y + 85 && enemy.y + 85 > player.y) {
+                player.respawn(false)
+            }
+        })
     }
 
     /* This is called by the update function and loops through all of the
